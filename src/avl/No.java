@@ -11,6 +11,7 @@ package avl;
  */
 
 public class No {
+    private int height;
     private Integer chave;
     private Integer fb;
     private No esquerda,direita,parente;
@@ -21,6 +22,14 @@ public class No {
         this.fb = 0;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+    
     public Integer getChave() {
         return chave;
     }
