@@ -288,7 +288,7 @@ public class Arvore {
     }
 
     // Retorna a altura da árvore
-    private static int height(No t) {
+    private static int altura(No t) {
         return t == null ? -1 : t.getHeight();
     }
 
@@ -304,19 +304,19 @@ public class Arvore {
     //##----------------FIM DOS MÉTODOS GENÉRIOS----------------##//
 
     //##----------------EXIBIÇÃO GRÁFICA DA ARVORE----------------##//
-    protected No searchFather(int el) {
-        No p = raiz;
-        No prev = null;
-        while (p != null && !(p.getChave() == el)) {  // acha o nó p com a chave el
-            prev = p;
-            if (p.getChave() < el) {
-                p = p.getDireita();
+    protected No buscarPai(int el) {
+        No no = raiz;
+        No anterior = null;
+        while (no != null && !(no.getChave() == el)) {  // acha o nó p com a chave el
+            anterior = no;
+            if (no.getChave() < el) {
+                no = no.getDireita();
             } else {
-                p = p.getEsquerda();
+                no = no.getEsquerda();
             }
         }
-        if (p != null && p.getChave() == el) {
-            return prev;
+        if (no != null && no.getChave() == el) {
+            return anterior;
         }
         return null;
     }
@@ -334,7 +334,7 @@ public class Arvore {
 
     private void displaySubTree(No no, String separar) {
         if (no != null) {
-            No pai = this.searchFather(no.getChave());
+            No pai = this.buscarPai(no.getChave());
             if (no.equals(pai.getEsquerda()) == true) {
                 System.out.println(separar + no.getChave() + "(" + no.getHeight() + ")" + " (ESQ)");
             } else {

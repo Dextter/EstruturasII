@@ -20,11 +20,12 @@ public class AVL {
             t.inserir(2);
             t.inserir(3);
             t.inserir(4);
-            t.inserir(5);
+            t.inserir(52);
             t.inserir(6);
-            t.inserir(7);
+            t.inserir(74);
+            t.inserir(12);            
+            t.inserir(83);
             t.inserir(8);
-            t.inserir(9);
             t.displayTree();
     }
     
